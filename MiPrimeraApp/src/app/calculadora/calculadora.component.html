@@ -1,0 +1,28 @@
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<div id = "Principal">
+  <div id= "Calculadora">
+     <input id="Pantalla" type="textbox" class="textbox" [value]="expresion">
+    <div id= "Teclado" class="buttons">
+      <!-- <button class="button" value="AC" (click)="getButton($event)">AC</button> -->
+      <button class="button" value="C" (click)="clear()">C</button>
+      <button class="button" value="%" (click)="getButton($event)">%</button>
+      <button class="button" value="/" (click)="getButton($event)">/</button><br>
+      <button class="button" value="7" (click)="getButton($event)" >7</button>
+      <button class="button" value="8" (click)="getButton($event)" >8</button>
+      <button class="button" value="9" (click)="getButton($event)">9</button>
+      <button class="button" value="*" (click)="getButton($event)" >*</button><br>
+      <button class="button" value="4" (click)="getButton($event)">4</button>
+      <button class="button" value="5" (click)="getButton($event)">5</button>
+      <button class="button" value="6" (click)="getButton($event)">6</button>
+      <button class="button" value="-" (click)="getButton($event)">-</button><br>
+      <button class="button" value="1" (click)="getButton($event)">1</button>
+      <button class="button" value="2" (click)="getButton($event)">2</button>
+      <button class="button" value="3" (click)="getButton($event)">3</button>
+      <button class="button" value="+" (click)="getButton($event)">+</button><br>
+      <button class="button" value="." (click)="getButton($event)">.</button>
+      <button class="button" value="0" (click)="getButton($event)">0</button>
+      <!-- <button class="button" value="Ans" (click)="getButton($event)">Ans</button> -->
+      <button class="button" value="=" (click)="resolve()" >=</button>
+    </div>
+  </div>
+</div>
