@@ -1,0 +1,16 @@
+<button (click) = "onClickMio($event)"> Pulsa wey !!</button>
+
+<select (change)="getSelect($event)">
+  <option value="uno">Uno</option>
+  <option value="dos">Dos</option>
+  <option value="tres">Tres</option>
+</select>
+
+<div class="boxHover" (mouseenter) = "mouseOnDiv()" (mouseout)="moseOutDiv()">
+  {{mensaje}}
+
+</div>
+
+<input type="text" (change)="changeInput($event)"
+                      (input)=onInput($event)
+                      (focus) ="onFocus()" (blur)="onBlur()">

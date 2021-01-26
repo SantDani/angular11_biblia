@@ -29,17 +29,28 @@ export class SaludoComponent implements OnInit {
 
   /**Las variables tienen que estar inicializadas  */
   mensaje: string ;
+  idParrafo: string;
+  idInput: string;
 
   constructor() {
     this.mensaje = 'Se los va a garchar a todos';
+    this.idParrafo = 'parrafoPrincipal';
+    this.idInput = 'button';
 
     setTimeout (() => {
-      this.mensaje = 'Garchados en 3 s, easy'
+      this.mensaje = 'Garchados en 3 s, easy';
+      this.idParrafo = 'idCambiado';
+      this.idInput = 'password';
 
     }, 3000)
    }
 
   ngOnInit(): void {
+  }
+
+  mostrarSaludo(): string{
+
+    return 'k mas ve, vengo de una funcion';
   }
 
 }
