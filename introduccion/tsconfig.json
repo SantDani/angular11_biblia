@@ -1,0 +1,7 @@
+{
+     "compilerOptions": {
+         "target": "ES6",// ES3 default
+        "outDir": "build",
+        "noEmitOnError": true // Indica que si hay error en la compliacion no cree el fichero JS
+        }
+}
