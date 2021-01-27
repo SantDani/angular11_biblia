@@ -9,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class CalculadoraComponent implements OnInit {
 
   expresion: string;
-  resultado: number;
+
   calculoFinalizado : boolean;
 
   constructor() {
     this.expresion = "";
-    this.resultado = 0;
+
     this.calculoFinalizado = false;
   }
 
@@ -43,7 +43,16 @@ export class CalculadoraComponent implements OnInit {
 
   }
 
+  getKey($event:any){
+    console.log($event.key);
 
+    if($event.key == 'Enter'){
+      console.log('EVALUAR = ' +  this.expresion)
+      this.expresion = eval(this.expresion);
+      this.calculoFinalizado = true;
+    }
+
+  }
 
   clear(){
     this.expresion = '';

@@ -1,7 +1,7 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 <div id = "Principal">
   <div id= "Calculadora">
-     <input id="Pantalla" type="textbox" class="textbox" [value]="expresion">
+     <input id="Pantalla" type="textbox" class="textbox" [value]="expresion" (keypress)="getKey($event)">
     <div id= "Teclado" class="buttons">
       <!-- <button class="button" value="AC" (click)="getButton($event)">AC</button> -->
       <button class="button" value="C" (click)="clear()">C</button>

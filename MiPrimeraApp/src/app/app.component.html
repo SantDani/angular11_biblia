@@ -14,4 +14,30 @@
 <!-- 28 Evend Bidning $event -->
 <!-- <app-eventos></app-eventos> -->
 
-<app-calculadora></app-calculadora>
+<!-- <app-calculadora></app-calculadora> -->
+
+<!-- Input propiedad binding -->
+<!-- <app-alerta [namePersoInput]='titulos[0]' subtitulo="subtitulo khe"></app-alerta>
+<app-alerta [namePersoInput]='titulos[1]' subtitulo="subtitulo khe 2 "></app-alerta>
+<app-alerta [namePersoInput]='titulos[2]' ></app-alerta>
+<app-alerta></app-alerta>
+{{titulos[0]}} -->
+
+
+<!-- 35 Modificación del componente Sumar, con Input(property binding) -->
+<!-- <app-sumador [a]='num[0]' [b]='num[1]'></app-sumador>
+<app-sumador [a]='num[2]' [b]='num[3]'></app-sumador> -->
+
+<!-- 37 Decorador @Output -->
+<!-- <app-alerta [namePersoInput]='titulos[0]' subtitulo="subtitulo khe" (alertaPulsada)='onAlertaPulsada($event)' ></app-alerta>
+<app-alerta [namePersoInput]='titulos[1]' subtitulo="subtitulo khe 2 "></app-alerta>
+<app-alerta [namePersoInput]='titulos[2]' (alertaPulsada)='onAlertaPulsada($event)' ></app-alerta>
+<app-alerta (alertaPulsada)='onAlertaPulsada($event)'></app-alerta> -->
+
+<!-- 38 Planteamiento: Modificación componente crónometro con Decorador Output -->
+
+<app-cronometro [valContador]='num[1]' (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
+<app-cronometro [valContador]='num[2]' (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
+<app-cronometro [valContador]='num[3]' (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
+<app-cronometro  (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
+
