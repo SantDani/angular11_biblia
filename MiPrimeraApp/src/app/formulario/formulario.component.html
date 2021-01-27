@@ -3,11 +3,11 @@
 
 
 
-    <input [placeholder]="titulo" [(ngModel)]='tarea.nombre' type="text"> <br>
+    <input [placeholder]="titulo" [(ngModel)]='newTask.titulo' type="text"> <br>
 
-    <input [placeholder]="descripcion" [(ngModel)]='tarea.descripcion' type="text"><br>
+    <input [placeholder]="descripcion" [(ngModel)]='newTask.descripcion' type="text"><br>
 
-    <p> Nueva tara : {{tarea.nombre}}</p>
-    <p> Descripcion tarea : {{tarea.descripcion}}</p>
-    <button (click)='sendTask()'> Enviar </button>
+
+    <button (click)='sendTask()'> Enviar </button> <br>
+    {{newTask | json}}
 </div>

@@ -1,4 +1,6 @@
+import { Task } from './../../models/tarea.models';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 
 @Component({
@@ -8,18 +10,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
-  tarea: any;
-
+  //tarea: any;
+  newTask : Task;
   titulo : string;
   descripcion : string
 
 
-  @Output() eventNewTask : EventEmitter<string>;
+  @Output() eventNewTask : EventEmitter<Task>;
 
   constructor() {
     this.titulo = 'Nombre de tu tarea';
     this.descripcion = 'Describe tu tarea';
-    this.tarea = {};
+    this.newTask = new Task();
 
     this.eventNewTask = new EventEmitter();
    }
@@ -28,6 +30,7 @@ export class FormularioComponent implements OnInit {
   }
 
   sendTask(){
-    this.eventNewTask.emit(`${this.tarea.nombre} - ${this.tarea.descripcion} || ` );
+    this.eventNewTask.emit(this.newTask);
+    this.newTask = new Task();
   }
 }

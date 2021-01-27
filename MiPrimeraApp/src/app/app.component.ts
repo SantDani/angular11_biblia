@@ -1,9 +1,10 @@
+import { Task } from './../models/tarea.models';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css' , ]
 })
 export class AppComponent {
   title = 'MiPrimeraApp';
@@ -13,9 +14,11 @@ export class AppComponent {
 
   num: number[];
 
-  tasks: string[] ;
+  tasks: any[] ;
 
   persona: any;
+
+  textoRoot: string;
 
   constructor(){
     this.titulos = ['Capitan america, el primer vengador', 'Capitana marvel', 'Iron man 2'];
@@ -27,8 +30,17 @@ export class AppComponent {
     this.persona = {}; // Objeto vacio
 
     this.tasks = [];
+
+    this.textoRoot ='Soy el padre ROOT';
+
   }
 
+  ngOnInit(){
+    let cont = 0;
+    setInterval(()=>{
+      this.textoRoot = `Texto ${cont++}`
+    },2000 )
+  }
   onAlertaPulsada($event: any){
     //console.log('ALerta pulsada! de root');
     console.log($event);
@@ -44,7 +56,9 @@ export class AppComponent {
   }
 
   lisenNewTask($event : any){
-    this.tasks += $event
+    //this.tasks += $event
+    console.log("evento esuchado -- " + $event);
+    this.tasks.push($event);
 
   }
 }

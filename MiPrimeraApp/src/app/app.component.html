@@ -66,6 +66,19 @@
   <li>Componente lista</li>
   <li>Modelo para cada tarea, componente?</li>
 </ul> -->
-<app-formulario (eventNewTask)='lisenNewTask($event)'></app-formulario>
-<app-lista [inputTasks]='tasks'></app-lista>
-<!-- {{tasks}} -->
+
+<!-- To Do simple -->
+<div>
+  <app-formulario (eventNewTask)="lisenNewTask($event)"></app-formulario>
+</div>
+<div>
+  ROOT
+  {{tasks | json}}
+  End list
+</div>
+<div>
+  <app-lista [inputTasks]="tasks"></app-lista>
+</div>
+
+<!-- Ciclos de Vida de un componente -->
+<!-- <app-ciclo-vida [inputTexto]="textoRoot"></app-ciclo-vida> -->

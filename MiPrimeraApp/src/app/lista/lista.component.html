@@ -1,2 +1,11 @@
-<p>Mse muestran la lista de tareas en el comonente lista</p>
-{{inputTasks}}
+<div class="container-border">
+  <p>Mse muestran la lista de tareas en el comonente lista</p>
+{{inputTasks | json}}
+<div  [innerHTML]="mostrarTareas()" > </div>
+
+<div>
+  show string
+  {{taskShow}}
+</div>
+
+</div>
