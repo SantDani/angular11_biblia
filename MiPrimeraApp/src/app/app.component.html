@@ -36,8 +36,36 @@
 
 <!-- 38 Planteamiento: Modificación componente crónometro con Decorador Output -->
 
-<app-cronometro [valContador]='num[1]' (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
+<!-- <app-cronometro [valContador]='num[1]' (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
 <app-cronometro [valContador]='num[2]' (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
 <app-cronometro [valContador]='num[3]' (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
-<app-cronometro  (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro>
+<app-cronometro  (alertaEndCronometro)='onAlertaCronometroFinalizado($event)'></app-cronometro> -->
 
+<!-- 40 Two way Binding , doble enlace-->
+<!--
+<input type="text" [(ngModel)]="campoTexto">
+<p>{{campoTexto}}</p>
+<button (click)='onChangeValue()'> Cambiar valor variable</button> -->
+
+<!-- asignamos variables de manera dianamia, es decir, no existe el atributo perosna,
+  pero se lo podemos asignar y asi creamos el atributo, like diccionario  -->
+
+<!--
+<div>
+
+  <input type="text" [(ngModel)]='persona.nombre'>
+  <input type="text" [(ngModel)]='persona.apellidos'>
+  <input type="text" [(ngModel)]='persona.edad'>
+</div> -->
+<!-- <p> Me llamo {{persona.nombre}} {{persona.apellidos}} y tengo {{persona.edad}} años</p>
+
+
+<ul>
+  Component app-root
+  <li>Componente formulario</li>
+  <li>Componente lista</li>
+  <li>Modelo para cada tarea, componente?</li>
+</ul> -->
+<app-formulario (eventNewTask)='lisenNewTask($event)'></app-formulario>
+<app-lista [inputTasks]='tasks'></app-lista>
+<!-- {{tasks}} -->

@@ -1,0 +1,13 @@
+<div class="container-border">
+  <h5> Titulo</h5>
+
+
+
+    <input [placeholder]="titulo" [(ngModel)]='tarea.nombre' type="text"> <br>
+
+    <input [placeholder]="descripcion" [(ngModel)]='tarea.descripcion' type="text"><br>
+
+    <p> Nueva tara : {{tarea.nombre}}</p>
+    <p> Descripcion tarea : {{tarea.descripcion}}</p>
+    <button (click)='sendTask()'> Enviar </button>
+</div>
