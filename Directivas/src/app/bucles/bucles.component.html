@@ -1,0 +1,38 @@
+<!-- <h3>ngFor simple</h3>
+<ul>
+  <li *ngFor="let persona of personas">
+    {{persona.nombre}} {{persona.apellidos}} - {{persona.edad}}
+  </li>
+</ul>
+
+<h3>ngFor mejorado</h3> -->
+
+<button (click)="addPerson()"> Nueva persona</button>
+
+<div class="personas">
+  <div class="persona" *ngFor="let persona of personas">
+    <h3>{{persona.nombre}} {{persona.apellidos}}</h3>
+    <p>Calle {{persona.calle}}</p>
+    <p>Telefono {{persona.tel}}</p>
+  </div>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Calle</th>
+      <th>Telefono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pers of personas">
+      <td>{{pers.nombre}}</td>
+      <td>{{pers.apellidos}}</td>
+      <td>{{pers.calle}}</td>
+      <td>{{pers.tel}}</td>
+    </tr>
+  </tbody>
+</table>

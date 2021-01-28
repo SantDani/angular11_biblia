@@ -10,11 +10,16 @@ export class AppComponent {
 
   propiedadesParrafo: any;
 
+  mostrarParrafo: boolean;
+
   constructor(){
     this.propiedadesParrafo = {
       color: 'red',
       fontSize: '24px'
     };
+    this.mostrarParrafo= true;
+
+
   }
 
   cambiaColor(color: string){
@@ -41,4 +46,7 @@ export class AppComponent {
     this.propiedadesParrafo.fontSize = `${$event.target.value}px`;
   }
 
+  onClickMostrar(){
+    this.mostrarParrafo = !this.mostrarParrafo;
+  }
 }
