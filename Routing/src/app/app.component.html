@@ -1,0 +1,21 @@
+<!-- ************************************************************************** -->
+<!-- Etiqueta que nos permite situar el componente activo en cada caso -->
+<h1>Título estático</h1>
+<h2>Sub estático</h2>
+
+<div class="rutas">
+  <!-- Huele peste herf porque refresca la pagina y angular es single page -->
+  <!-- <a href="/sobre"  > Sobre </a>
+  <a href="/informacion" > Información</a>
+  <a href="/contacto" > Contacta con nosotros</a> -->
+
+  <a [routerLink]="['/sobre']"  routerLinkActive="classActiva"> Sobre </a>
+  <a [routerLink]="['/informacion']" routerLinkActive="classActiva"> Información</a>
+  <a [routerLink]="['/contacto']" routerLinkActive="classActiva"> Contacta con nosotros</a>
+</div>
+<router-outlet></router-outlet>
+<div class="botones">
+  <button (click)="onClick('sobre')">Sobre Mi</button>
+  <button (click)="onClick('informacion')">Información de la página</button>
+  <button (click)="onClick('contacto')">Contacta con nosotros </button>
+</div>
