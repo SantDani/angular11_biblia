@@ -1,6 +1,6 @@
 import { Task } from './../../models/tarea.models';
 import { Component, Input, OnInit } from '@angular/core';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-lista',
