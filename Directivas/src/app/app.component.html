@@ -1,7 +1,7 @@
 
 <!-- Directivas atributo (modifical estilos) -->
 
-  ngStyle nos permite asignar estilos mas variables, dinamicos
+  <!-- ngStyle nos permite asignar estilos mas variables, dinamicos
   <div>
   <input type="range" min="12" max="200" step="2" (change)="onChange($event)" >
 </div>
@@ -24,7 +24,7 @@
 </div>
 
 Directiva atributo ngClass
-<app-semaforo></app-semaforo>
+<app-semaforo></app-semaforo> -->
 
 
 <!-- ***************************************************************************** -->
@@ -32,7 +32,7 @@ Directiva atributo ngClass
  <!-- Directiva Estrucural ngIf
 , alternativa al CSS. En CSS no se pueden realizar estructuras condicionales -->
 
- <button (click)="onClickMostrar()"> Mostrar / Ocultar</button>
+ <!-- <button (click)="onClickMostrar()"> Mostrar / Ocultar</button>
  <p *ngIf="mostrarParrafo; then mainBlock else elseBlock">Este es mi parrafo wey</p>
 
  <ng-template #mainBlock>
@@ -48,18 +48,26 @@ Directiva atributo ngClass
   Alternativa mas limpia
   <p *ngIf="mostrarParrafo">Primer parrafo, easy wey</p>
   <p *ngIf="!mostrarParrafo">Segundo parrafo, easy win</p>
-<hr>
+<hr> -->
 
 
 
 
 <!-- ***************************************************************************** -->
-<h2>Directiva ngFor</h2>
-<app-bucles></app-bucles>
+<!-- <h2>Directiva ngFor</h2>
+<app-bucles></app-bucles> -->
 
 <!-- ***************************************************************************** -->
-<hr>
+
+<!-- <hr>
 <h2>Directiva ngSwitch</h2>
-<app-switch></app-switch>
+<app-switch></app-switch> -->
 
-
+<!-- ***************************************************************************** -->
+<h2>Directiva Personalizada </h2>
+<p [appSubrayado]="{ sizeHover: '50px', sizeNoHover: ' 20px'}"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  Assumenda non recusandae adipisci inventore culpa optio blanditiis</p>
+<p  > Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  Assumenda non recusandae adipisci inventore culpa optio blanditiis</p>
+<p [appSubrayado]="{ sizeHover: '70px', sizeNoHover: ' 30px'}" > Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  Assumenda non recusandae adipisci inventore culpa optio blanditiis</p>

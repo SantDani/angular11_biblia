@@ -6,7 +6,7 @@ import { Directive } from '@angular/core';
 export class SubrayadoDirective {
 
   constructor() {
-    console.log('Directiva subrayado')
+
    }
 
 }
