@@ -1,0 +1,14 @@
+<div>
+  <div>
+
+
+    <h3>Título</h3>
+    <input type="text" placeholder="Escriba el título de la tarea" [(ngModel)]="newTask.title" >
+    <h3>Descripción</h3>
+    <input type="text" placeholder="Breve descripción"  [(ngModel)]="newTask.description">
+
+
+  </div>
+    <button (click)="sendNewTask()">Guardar Task</button>
+</div>
+{{newTask | json}}

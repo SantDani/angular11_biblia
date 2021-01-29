@@ -1,0 +1,20 @@
+<p>list-task works!</p>
+{{inputTasks | json}}
+<div class="tasks">
+  <div class="task" [ngClass]="{completed:(task.complete), running:(!task.complete)}"
+  *ngFor="let task of inputTasks; let i = index" >
+    <h1> {{task.title}}</h1>
+    <h3> {{task.description}} </h3>
+
+    <!--  MI version
+      <button *ngIf="!task.complete" (click)="onComplete(inputTasks.indexOf(task))"> Completar </button>
+    <button *ngIf="task.complete" (click)="onIncomplete(inputTasks.indexOf(task))"> Incomplea </button>
+     -->
+     <!-- version profe  -->
+     <button (click)="onClick(task)">{{ task.complete ? 'Completa' : 'Incompleta'}} </button>
+    <!-- wey, el profe a;ade una variable indice, liego de inputTasks -->
+     <!-- <button (click)="onDelete(task)"> Eliminar </button> -->
+     <button (click)="onDeleteV2(i)"> Eliminar </button>
+
+  </div>
+</div>

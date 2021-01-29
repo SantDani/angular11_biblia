@@ -1,0 +1,27 @@
+.tasks{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 30px;
+  background-color: darkgrey;
+  justify-content: center;
+
+
+}
+
+.task{
+
+  border:2px solid black;
+  width: 300px;
+  height: 200px;
+
+  padding: 15px;
+  background-color: cadetblue;
+}
+.completed{
+  background-color: green;
+}
+
+.running{
+  background-color: red;
+}
