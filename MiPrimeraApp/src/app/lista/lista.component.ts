@@ -31,8 +31,6 @@ export class ListaComponent implements OnInit {
     console.log("***Estoy en ongOnChanges");
     console.log(changesSimple);
     this.mostrarTareas();
-
-
    }
 
   ngAfterViewInit(){

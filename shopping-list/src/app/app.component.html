@@ -1,0 +1,8 @@
+<app-form-product (outputEventNewProduct)="lisenerNewProduc($event)"></app-form-product>
+<hr>
+{{ this.products}}
+<hr>
+<app-list-products [inputProducts]="products"></app-list-products>
+<hr>
+<h2>Productos comprados</h2>
+<app-list-products (outEventBuyProduct)="lisenerNewProduc($event)"></app-list-products>
