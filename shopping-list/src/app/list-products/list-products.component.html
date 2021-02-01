@@ -1,19 +1,32 @@
-<p>list-products works!</p>
-<div>
+
+<!-- <div>
   {{this.inputProducts | json}}
-</div>
+</div> -->
 
 <div class="products">
   <div  class="product" *ngFor="let product of this.inputProducts" >
-    <div *ngIf="!product.buyed">
-      <h3> nombre producto {{product.name}}</h3>
-      <div>
-        <h2>Cantidad : {{product.quantity}}</h2>
-        <h2>Departamento :   {{product.department}} </h2>
+    <div >
+      <h3>  {{product.name}}</h3>
+      <div class="detail">
+        <h4>Cantidad : {{product.quantity}}</h4>
+        <h4>Dep. :   {{product.department}} </h4>
 
       </div>
-      <button (click)="buyProduct(product)"></button>
+      <button (click)="buyProduct(product)"> {{ product.buyed ? 'Quitar' : 'Comprar'}}</button>
     </div>
-
   </div>
+
+  <div  class="product" *ngFor="let product of this.inputProductsBuy" >
+    <div >
+      <h3> nombre producto {{product.name}}</h3>
+      <div class="detail">
+        <h4>Cantidad : {{product.quantity}}</h4>
+        <h4>Departamento :   {{product.department}} </h4>
+
+      </div>
+      <button (click)="deleteProduct(product)"> {{ product.buyed ? 'Quitar' : 'Comprar'}} </button>
+    </div>
+  </div>
+
+
 </div>

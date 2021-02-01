@@ -1,8 +1,21 @@
-<app-form-product (outputEventNewProduct)="lisenerNewProduc($event)"></app-form-product>
-<hr>
-{{ this.products}}
-<hr>
-<app-list-products [inputProducts]="products"></app-list-products>
-<hr>
-<h2>Productos comprados</h2>
-<app-list-products (outEventBuyProduct)="lisenerNewProduc($event)"></app-list-products>
+<div class="main-container">
+  <div class="form">
+    <app-form-product class="form" (outputEventNewProduct)="lisenerNewProduc($event)"></app-form-product>
+  </div>
+
+  <!-- {{ this.products}} -->
+  <div class="lists-container">
+
+    <div class="list-products">
+      <h2>Productos </h2>
+      <app-list-products  [inputProducts]="products" (outEventBuyProduct)="lisenerBuyProduct($event)" ></app-list-products>
+    </div>
+
+    <div class="list-products-order">
+      <h2>Productos comprados</h2>
+      <app-list-products  class="" [inputProductsBuy]="productsBuyed" (outEvenetDeleteProduct)="lisenerDeleteProduct($event)"></app-list-products>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+.main-container{
+  background-color: lightyellow;
+}
+
+.lists-container{
+  display: flex;
+  flex-direction: row;
+  background-color: lightsalmon;
+  justify-content: space-around;
+}
