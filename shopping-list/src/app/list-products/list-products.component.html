@@ -4,7 +4,7 @@
 </div> -->
 
 <div class="products">
-  <div  class="product" *ngFor="let product of this.inputProducts" >
+  <div  class="product" *ngFor="let product of this.inputProducts; let indexProduct = index" >
     <div >
       <h3>  {{product.name}}</h3>
       <div class="detail">
@@ -12,21 +12,10 @@
         <h4>Dep. :   {{product.department}} </h4>
 
       </div>
-      <button (click)="buyProduct(product)"> {{ product.buyed ? 'Quitar' : 'Comprar'}}</button>
+      <button (click)="selectedProduct(indexProduct)"> {{ product.buyed ? 'Quitar' : 'Comprar'}}</button>
     </div>
   </div>
 
-  <div  class="product" *ngFor="let product of this.inputProductsBuy" >
-    <div >
-      <h3> nombre producto {{product.name}}</h3>
-      <div class="detail">
-        <h4>Cantidad : {{product.quantity}}</h4>
-        <h4>Departamento :   {{product.department}} </h4>
-
-      </div>
-      <button (click)="deleteProduct(product)"> {{ product.buyed ? 'Quitar' : 'Comprar'}} </button>
-    </div>
-  </div>
 
 
 </div>

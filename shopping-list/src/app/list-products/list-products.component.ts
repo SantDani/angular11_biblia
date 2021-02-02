@@ -11,35 +11,24 @@ export class ListProductsComponent implements OnInit {
 
   @Input()
   inputProducts: Product[];
-  @Input()
-  inputProductsBuy : Product[];
+
 
   @Output()
-    outEventBuyProduct: EventEmitter<Product>;
+    outEventSelectProduct: EventEmitter<number>;
 
-  @Output()
-    outEvenetDeleteProduct : EventEmitter<Product>;
+
   constructor() {
     this.inputProducts = [];
-    this.outEventBuyProduct = new EventEmitter();
-    this.inputProductsBuy = [];
-    this.outEvenetDeleteProduct = new EventEmitter();
+    this.outEventSelectProduct = new EventEmitter();
+
+
   }
 
   ngOnInit(): void {
   }
 
-  buyProduct(product : Product){
-    // this.outEventBuyProduct.emit(product);
-    product.buyed = true;
-    this.del(this.inputProducts, product);
-    this.outEventBuyProduct.emit(product);
-  }
-
-  deleteProduct(product : Product){
-    product.buyed = false;
-    this.del(this.inputProductsBuy, product);
-    this.outEvenetDeleteProduct.emit(product);
+  selectedProduct(indexProduct : number){
+    this.outEventSelectProduct.emit(indexProduct);
 
   }
 

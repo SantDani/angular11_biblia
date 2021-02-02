@@ -28,15 +28,18 @@ export class AppComponent {
     this.products.push($event);
   }
 
-  lisenerBuyProduct($event: Product){
-    console.log ("Producto compado " + $event.name);
-    //$event.buyed = true;
-    $event.buyed = true;
-    this.productsBuyed.push($event);
+  lisenerBuyProduct($event: number){
+
+    const product = this.products.splice($event, 1);
+    product[0].buyed = true;
+    this.productsBuyed.push(product[0]);
 
   }
 
-  lisenerDeleteProduct($event : Product){
-    this.products.push($event);
+  lisenerDeleteProduct($event : number){
+
+    const  product = this.productsBuyed.splice($event, 1);
+    product[0].buyed = false;
+    this.products.push(product[0]);
   }
 }

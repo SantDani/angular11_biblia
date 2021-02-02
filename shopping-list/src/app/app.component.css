@@ -1,8 +1,15 @@
 .main-container{
   background-color: lightyellow;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+.form{
+  width: 30em;
+}
 .lists-container{
+  width: 80em;
   display: flex;
   flex-direction: row;
   background-color: lightsalmon;

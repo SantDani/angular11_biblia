@@ -8,12 +8,12 @@
 
     <div class="list-products">
       <h2>Productos </h2>
-      <app-list-products  [inputProducts]="products" (outEventBuyProduct)="lisenerBuyProduct($event)" ></app-list-products>
+      <app-list-products  [inputProducts]="products" (outEventSelectProduct)="lisenerBuyProduct($event)" ></app-list-products>
     </div>
 
     <div class="list-products-order">
       <h2>Productos comprados</h2>
-      <app-list-products  class="" [inputProductsBuy]="productsBuyed" (outEvenetDeleteProduct)="lisenerDeleteProduct($event)"></app-list-products>
+      <app-list-products   [inputProducts]="productsBuyed" (outEventSelectProduct)="lisenerDeleteProduct($event)"></app-list-products>
     </div>
 
   </div>
