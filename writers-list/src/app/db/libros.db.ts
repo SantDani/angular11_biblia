@@ -1,4 +1,4 @@
-import { Libro } from '../models/libro.model';
+import { Libro } from '../models/libros.model';
 
 export const LIBROS: Libro[] = [
     {

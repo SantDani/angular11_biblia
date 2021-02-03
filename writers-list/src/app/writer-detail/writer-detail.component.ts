@@ -1,3 +1,4 @@
+import { LibrosService } from './../servicios/libros/libros.service';
 import { SEscritoresService } from './../servicios/s-escritores.service';
 import { Escritor } from './../models/escritor.model';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ export class WriterDetailComponent implements OnInit {
   detailEscritor: Escritor;
   constructor(
     private activateRoute: ActivatedRoute,
-    private escritoresService : SEscritoresService
+    private escritoresService: SEscritoresService
   ) {
     this.detailEscritor = null;
   }

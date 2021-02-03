@@ -1,0 +1,8 @@
+<h3>Libros de este autor</h3>
+<div class="libros">
+  <div class="libro" *ngFor="let libro of this.libros">
+    <img [src]="libro.imagen">
+    <h4>{{libro.titulo}}</h4>
+  </div>
+
+</div>
