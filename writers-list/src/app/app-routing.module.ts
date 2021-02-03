@@ -1,11 +1,14 @@
+import { WriterDetailComponent } from './writer-detail/writer-detail.component';
 import { WriterComponent } from './writer/writer.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', component: WriterComponent},
-  {path:':escritorId', component: WriterComponent }
+  { path: '', pathMatch: 'full', redirectTo: '/escritores'},
+  { path: 'escritores', component: WriterComponent},
+  { path: 'escritores/:escritorId', component: WriterDetailComponent },
+  { path: ':**', redirectTo: '/escritores' }
 
 ];
 

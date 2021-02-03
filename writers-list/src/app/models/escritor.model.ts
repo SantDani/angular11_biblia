@@ -1,10 +1,10 @@
 export class Escritor{
 
-  id : number;
+  id: number;
   nombre: string;
-  apellidos : string;
-  imagen : string;
-  pais : string;
+  apellidos: string;
+  imagen: string;
+  pais: string;
 
   constructor(id: number, nombre: string, apellidos: string, imagen: string, pais: string){
 
@@ -14,5 +14,7 @@ export class Escritor{
     this.imagen = imagen;
     this.pais = pais;
   }
+
+
 
 }

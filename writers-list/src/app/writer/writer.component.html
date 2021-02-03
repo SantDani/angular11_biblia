@@ -9,14 +9,14 @@
 <!-- <router-outlet></router-outlet> -->
 <!-- {{this.escritores | json}} -->
 <div class="esritores">
-  <div class="escritor" *ngFor="let escritor of this.escritores">
-    <!-- <a [routerLink]="[escritor.id]"  (click)="this.getEscritorByID(escritor.id)"> -->
-    <a   (click)="this.getEscritorByID(escritor.id)">
+  <div class="escritor" *ngFor="let escritor of this.escritores" [routerLink]="[escritor.id]">
+
+    <!-- <a   (click)="this.getEscritorByID(escritor.id)"> -->
       <h3>{{escritor.nombre}}</h3>
-      <div class="img">
-        <img [src]="escritor.imagen">
-      </div>
-    </a>
+
+        <img class="img-escritor" [src]="escritor.imagen">
+
+
 
     <h4>{{escritor.pais}}</h4>
 

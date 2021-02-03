@@ -17,28 +17,33 @@ export class WriterComponent implements OnInit {
   constructor(private escritoresService : SEscritoresService , private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.escritores = this.escritoresService.getEscritores();
+    //this.escritores = this.escritoresService.getEscritores();
+    // llamamos los escritores By Promise
+    this.getEscritoresPromiseAsync();
     this.paises = this.escritoresService.getPaises();
     //console.log("paises recuperados " + this.paises);
 
     //this.addObserver();
   }
-
-  addObserver(){
-    this.activateRoute.params.subscribe(concreteSubscribers=>{
-      console.log("componente writer");
-      console.log(concreteSubscribers);
-      console.log(concreteSubscribers.escritorId);
-      this.escritorID = concreteSubscribers.escritorId;
-
-
+  getEscritoresPromise() {
+    this.escritoresService.getPromiseEscritores()
+    .then(escritores => {
+      this.escritores = escritores;
     });
   }
+  /**
+   * @param promise opcion que me gusta mas.
+   */
+  async getEscritoresPromiseAsync() {
+    this.escritores = await this.escritoresService.getPromiseEscritores();
+  }
+
+
   async getEscritorByID(id: number){
 
     try{
 
-      this.escritores = await this.escritoresService.getEscritorById(id);
+      this.escritores.push(await this.escritoresService.getEscritorById(id));
       console.log("consigo ");
       console.log(this.escritores);
     }catch(error){

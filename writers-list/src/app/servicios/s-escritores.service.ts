@@ -30,11 +30,19 @@ export class SEscritoresService {
     }
     //console.log("end paises  " + this.paises);
   }
-  getEscritores(){
-    return this.escritores;
+  getEscritores(): Escritor[]{
+    return ESCRITORES;
   }
 
-  getPaises(){
+  getPromiseEscritores(): Promise<Escritor[]>{
+
+    return new Promise((resolve, rejext)=>{
+      resolve(ESCRITORES);
+    });
+
+  }
+
+  getPaises(): string[]{
     return this.paises;
   }
 
@@ -48,17 +56,17 @@ export class SEscritoresService {
       resolve(arrayTemp);
     });
   }
-  getEscritorById(id: number): Promise<Escritor[]>{
+  getEscritorById(escritorId: number): Promise<Escritor>{
     return new Promise((resolve, reject) =>{
 
-      const arrayTemp = this.escritores.filter(escritor =>{
-        console.log("escirotr.id = " + escritor.id + "??" + id);
-        console.log("resultado " + (escritor.id === id));
+      const escritorFound = this.escritores.find(escritor =>{
+        // console.log("escirotr.id = " + escritor.id + "??" + escritorId);
+        // console.log("resultado " + (escritor.id === escritorId));
 
-        return escritor.id == id;
+        return escritor.id === (Number)(escritorId);
       });
 
-      resolve(arrayTemp);
+      resolve(escritorFound);
     });
 
   }

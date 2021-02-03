@@ -1,0 +1,14 @@
+<!-- <p>writer-detail works!</p> -->
+<!-- {{this.detailEscritor | json}} -->
+<div class="escritor" >
+
+  <!-- WEY mira esa cosa, el interrogante hace que no evaluemos la expresion si es null,
+  es decir, espera a que tenga valor para evaluar la expresion -->
+    <h3>{{this.detailEscritor?.nombre}}</h3>
+
+      <img class="img-escritor" [src]="this.detailEscritor?.imagen">
+
+
+
+  <h4>{{this.detailEscritor?.pais}}</h4>
+</div>
