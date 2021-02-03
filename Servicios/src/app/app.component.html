@@ -1,0 +1,31 @@
+
+  <H2>Introducción a los servicios </H2>
+  <button (click)="onClick()">Añadir nueva persona </button>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Edad</th>
+    <th>Activo</th>
+  </tr>
+  <tr *ngFor="let persona of this.arrPersonas">
+    <td>{{persona.nombre}}</td>
+    <td>{{persona.apellidos}}</td>
+    <td>{{persona.edad}}</td>
+    <td>{{persona.activo}}</td>
+  </tr>
+</table>
+
+<!-- ****************************************************************************** -->
+<h2> Accediendo al servico en componente</h2>
+<app-lista></app-lista>
+<p>
+  Con el boton añadir, se llama a la funcion create() de personas.service.ts y
+  se crea una nueva persona y se comparte a todos los componentes.
+</p>
+<div>
+
+  <button (click)="onClickActivas()">Activar Promesa con tryCatch </button> <br>
+  <button (click)="onClickActivasAsyncAwait()">Activar Promesa con async a wait </button>
+</div>
