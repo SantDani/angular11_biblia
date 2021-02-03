@@ -1,0 +1,44 @@
+.buttons-pais{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button{
+  padding: 1em;
+  /* background-color: magenta; */
+  font-size: 30px;
+  border-radius: 20px;
+}
+
+.esritores{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.escritor{
+  /* display: flex; */
+  /* flex-direction: row; */
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid black;
+  width: 300px;
+  height: 400px;
+
+}
+
+.img {
+
+  /* background-color: lightgreen; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.img img {
+  width: 200px;
+  height: 300px;
+}
+

@@ -1,0 +1,25 @@
+{{this.escritorID}}
+<div class="buttons-pais">
+  <button class="button" (click)="onAllEscritors()" > Todos</button>
+  <div *ngFor="let pais of this.paises">
+    <button class="button" (click)="onPais(pais)">{{pais}}</button>
+  </div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
+<!-- {{this.escritores | json}} -->
+<div class="esritores">
+  <div class="escritor" *ngFor="let escritor of this.escritores">
+    <!-- <a [routerLink]="[escritor.id]"  (click)="this.getEscritorByID(escritor.id)"> -->
+    <a   (click)="this.getEscritorByID(escritor.id)">
+      <h3>{{escritor.nombre}}</h3>
+      <div class="img">
+        <img [src]="escritor.imagen">
+      </div>
+    </a>
+
+    <h4>{{escritor.pais}}</h4>
+
+  </div>
+</div>
+

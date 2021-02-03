@@ -8,6 +8,15 @@
 		},
 		{
 			"path": "shopping-list"
+		},
+		{
+			"path": "Servicios"
+		},
+		{
+			"path": "writers-list"
+		},
+		{
+			"path": "Routing"
 		}
 	]
 }
