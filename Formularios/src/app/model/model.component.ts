@@ -9,20 +9,37 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ModelComponent implements OnInit {
 
   formulario: FormGroup;
+  expresionRegularValidarEmail: string;
 
-
+  /**
+   *
+   * valid -- invalid
+   * Prisitne -- dirty
+   * untouched -- touched
+   */
   constructor() {
+
+    this.expresionRegularValidarEmail = '^[0-9a-zA-Z]+([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$';
     this.formulario = new FormGroup(
       {
         nombre: new FormControl('', [
           Validators.required,
+          Validators.minLength(3)
         ]),
-        apellido: new FormControl(''),
+        apellido: new FormControl('',[
+          Validators.maxLength(10)
+        ]
+        ),
         edad: new FormControl(''),
         dni: new FormControl(''),
         password: new FormControl(''),
         repite_password: new FormControl(''),
-        email: new FormControl(''),
+        email: new FormControl('', [
+          // .pattern enviar una expresion regular para validad
+          //https://regexlib.com/?AspxAutoDetectCookieSupport=1
+          Validators.pattern(this.expresionRegularValidarEmail),
+
+        ]),
       }
     );
    }

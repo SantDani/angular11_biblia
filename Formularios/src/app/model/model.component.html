@@ -2,10 +2,15 @@
 
 <!-- no hace falta que le envie los datos por parametro como en form template,
 ya que, estan declarados en el .ts -->
-<form [formGroup]="this.formulario" (ngSubmit)="onSubmit()">
+<form [formGroup]="this.formulario" (ngSubmit)="onSubmit()" >
   <div class="form-group">
-    <label >Nombre</label><br>
-    <input type="text" class="form-control" formControlName="nombre">
+    <label for="">Nombre</label><br>
+    <input type="text" class="form-control" formControlName="nombre" ngModel>
+    <div class="controls">
+      <p>nombre Valid ? {{this.formulario.controls.nombre.valid}}</p>
+      <p>nombre dirty ? {{this.formulario.controls.nombre.dirty}}</p>
+      <p>nombre untouched ? {{this.formulario.controls.nombre.untouched}}</p>
+    </div>
   </div>
   <div class="form-group">
     <label >Apellidos</label>
@@ -21,7 +26,7 @@ ya que, estan declarados en el .ts -->
   </div>
   <div class="form-group">
     <label >Contraseña </label>
-    <input type="text" class="form-control" formControlName="password">
+    <input type="password" class="form-control" formControlName="password">
   </div>
   <div class="form-group">
     <label >Repite contraseña </label>
@@ -29,10 +34,18 @@ ya que, estan declarados en el .ts -->
   </div>
   <div class="form-group">
     <label >Correo electronico</label>
-    <input type="password" class="form-control" formControlName="email">
+    <!-- expresiones regulares para validar email  https://regexlib.com/?AspxAutoDetectCookieSupport=1-->
+    <input type="email" class="form-control" formControlName="email">
   </div>
 
-  <input type="submit" value="Enviar" class="btn btn-block btn-success">
+  <input type="submit" value="Enviar" class="btn btn-block btn-success" [disabled]="!this.formulario.valid">
 </form>
 
 {{this.formulario.value | json}}
+
+<div>
+  <p> Valido {{this.formulario.valid}} </p>
+  <p> Invalido {{this.formulario.invalid}} </p>
+  <p> Dirty {{this.formulario.dirty}} </p>
+  <p> untouched {{this.formulario.untouched}} </p>
+</div>
