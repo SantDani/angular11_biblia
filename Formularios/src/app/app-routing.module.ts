@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full' , redirectTo: '/template'},
+  {path: '', pathMatch:'full' , redirectTo: '/model'},
   {path: 'template', component: TemplateComponent},
   {path: 'model', component: ModelComponent},
   {path: '**', redirectTo: 'model'}

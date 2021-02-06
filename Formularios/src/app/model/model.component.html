@@ -1,1 +1,38 @@
 <p>model works!</p>
+
+<!-- no hace falta que le envie los datos por parametro como en form template,
+ya que, estan declarados en el .ts -->
+<form [formGroup]="this.formulario" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label >Nombre</label><br>
+    <input type="text" class="form-control" formControlName="nombre">
+  </div>
+  <div class="form-group">
+    <label >Apellidos</label>
+    <input type="text" class="form-control" formControlName="apellido">
+  </div>
+  <div class="form-group">
+    <label >Edad</label>
+    <input type="text" class="form-control" formControlName="edad">
+  </div>
+  <div class="form-group">
+    <label >DNI</label>
+    <input type="text" class="form-control" formControlName="dni">
+  </div>
+  <div class="form-group">
+    <label >Contraseña </label>
+    <input type="text" class="form-control" formControlName="password">
+  </div>
+  <div class="form-group">
+    <label >Repite contraseña </label>
+    <input type="password" class="form-control" formControlName="repite_password">
+  </div>
+  <div class="form-group">
+    <label >Correo electronico</label>
+    <input type="password" class="form-control" formControlName="email">
+  </div>
+
+  <input type="submit" value="Enviar" class="btn btn-block btn-success">
+</form>
+
+{{this.formulario.value | json}}
