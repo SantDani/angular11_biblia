@@ -1,0 +1,12 @@
+/* ng-valid, cuando han pasado las validacioes  */
+/* ng-pristine, cuando aun no se ha escrito*/
+/* ng-dirty, cuando ya se ha escrito antes*/
+/* ng-untouched, cuando no has tenido el foco ni lo has perdio*/
+/* ng-touched, cuando has tenido el foco y lo has perdido*/
+input.ng-valid.ng-touched.ng-dirty{
+  border:1px solid green;
+}
+
+input.ng-invalid.ng-touched.ng-dirty{
+  border:1px solid red;
+}
