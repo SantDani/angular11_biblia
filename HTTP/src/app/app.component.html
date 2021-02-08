@@ -1,6 +1,23 @@
 
 <div>
-  <button (click)="onClickPost()"> Peticion POST </button>
+  <!-- <button (click)="onClickPost()"> Peticion POST </button> -->
+  <form [formGroup]="this.formulario" (ngSubmit)="onSumbitForm()">
+    <div>
+      <label > TITULO</label>
+      <input type="text" formControlName="title">
+    </div>
+    <div>
+      <label > Cuerpo </label>
+      <input type="text" formControlName="body">
+    </div>
+    <div>
+      <label > User ID</label>
+      <input type="text" formControlName="userId">
+    </div>
+
+    <input type="submit" value="Enviar">
+  </form>
+
 </div>
 <div class="posts">
   <div class="post" *ngFor="let post of this.arrPost" (click)="onClickBox(post.id)">

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { error } from 'protractor';
 import { PostService } from './services/post.service';
 
@@ -11,7 +12,15 @@ export class AppComponent {
   title = 'HTTP';
 
   arrPost: any[];
-  constructor(private postService : PostService){ }
+  formulario: FormGroup;
+  constructor(private postService : PostService){
+
+    this.formulario = new FormGroup({
+      title: new FormControl(''),
+      body: new FormControl(''),
+      userId: new FormControl('')
+    });
+  }
 
   ngOnInit(){
     this.postService.getAll()
@@ -43,5 +52,15 @@ export class AppComponent {
       console.log(response);
     })
     .catch(error => console.log(error));
+  }
+
+  async onSumbitForm(){
+    try {
+      const response   = await this.postService.create(this.formulario.value);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+
   }
 }
