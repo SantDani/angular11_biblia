@@ -10,3 +10,7 @@ input.ng-valid.ng-touched.ng-dirty{
 input.ng-invalid.ng-touched.ng-dirty{
   border:1px solid red;
 }
+.error{
+  color:red;
+  font-size: 14px;
+}
