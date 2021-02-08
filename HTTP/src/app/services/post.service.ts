@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +36,16 @@ export class PostService {
   create( {title, body, userId}): Promise<any>{
     const bodyRequest = {title, body, userId};
 
-    return this.httClient.post<any>(this.baseUrl, bodyRequest).toPromise();
+    /**
+     * Las headers / cabeceras sirven para autentificarnos, tokens o credenciales...
+     */
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-type' : 'application/json; charset=UTF-8'
+        } )
+    };
+
+    return this.httClient.post<any>(this.baseUrl, bodyRequest, httpOptions).toPromise();
   }
 
   update({id, title, body, userId}): Promise<any>{
