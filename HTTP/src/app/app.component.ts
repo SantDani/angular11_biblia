@@ -61,6 +61,29 @@ export class AppComponent {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  onClickUpdate(){
+    this.postService.update({
+      id: 5,
+      title: ' Nuevo titulo desde funcion UPDATE',
+      body: ' Nuevo body desde funcion UPDATE',
+      userId: 3
+    }).then(response => {
+      console.log('Reapuesta de la peticion HTTP, put');
+      console.log(response);
+
+    }).catch(error => console.log(error));
+  }
+
+  async onClickDelete(){
+    try {
+      const response = await this.postService.delete(5);
+      console.log('Respuesta despues de peticion HTTP, Delete');
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
 
   }
 }
