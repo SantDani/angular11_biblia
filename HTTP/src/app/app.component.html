@@ -1,6 +1,9 @@
 
+<div>
+  <button (click)="onClickPost()"> Peticion POST </button>
+</div>
 <div class="posts">
-  <div class="post" *ngFor="let post of this.arrPost">
+  <div class="post" *ngFor="let post of this.arrPost" (click)="onClickBox(post.id)">
     <h4>{{post.title}}</h4>
     <p>{{post.body}}</p>
     <p>{{post.id}}</p>

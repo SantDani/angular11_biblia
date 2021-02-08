@@ -28,4 +28,14 @@ export class PostService {
     //return this.httClient.get(this.baseUrl).toPromise(); //sin promesa
     return this.httClient.get<any[]>(this.baseUrl).toPromise();
   }
+
+  getById(id: number): Promise<any>{
+    return this.httClient.get<any>(`${this.baseUrl}/${id}`).toPromise();
+  }
+
+  create( {title, body, userId}): Promise<any>{
+    const bodyRequest = {title, body, userId};
+
+    return this.httClient.post<any>(this.baseUrl, bodyRequest).toPromise();
+  }
 }

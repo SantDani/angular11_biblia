@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { error } from 'protractor';
 import { PostService } from './services/post.service';
 
 @Component({
@@ -19,5 +20,28 @@ export class AppComponent {
         this.arrPost = posts;
       })
       .catch(error => console.log(error));
+  }
+
+  async onClickBox(id: number) {
+    try {
+      const post = await this.postService.getById(id);
+      console.log(post);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  onClickPost(){
+    this.postService.create(
+      {
+        title: 'Nuevo tituo',
+        body: 'Este es el cuerpo del post',
+        userId : 1
+      }
+    ).then(response => {
+      console.log("Luego del POST devuelvo\n ");
+      console.log(response);
+    })
+    .catch(error => console.log(error));
   }
 }
