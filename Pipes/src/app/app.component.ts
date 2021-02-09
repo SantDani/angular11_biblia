@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pipes';
-
-  texto: string;
-
-  constructor(){
-    this.texto = 'EN un lugar de la mancha';
-  }
 }

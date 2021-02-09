@@ -1,29 +1,7 @@
-<!--
+
+<!-- S10 video 113 -->
 <app-currency-pipe></app-currency-pipe>
 <app-decimal-pipe></app-decimal-pipe>
 <app-date-pipe></app-date-pipe>
 <app-percent-pipe></app-percent-pipe>
 <app-json-pipe></app-json-pipe>
-<app-lower-upper-title-pipe></app-lower-upper-title-pipe>
-<app-slice-collections-pipe></app-slice-collections-pipe>
-<app-async-pipe></app-async-pipe> -->
-
-<h2>Custom pipe: Reverso</h2>
-<!-- Primero no se muestra nada, porque el return devuelve null -->
-{{this.texto | reverseCustomPipe }}
-
-
-<h2>Custom pipe: Capitalize</h2>
-<!-- Primero no se muestra nada, porque el return devuelve null -->
-{{this.texto | capitalizeCustomPipe }}
-
-<h2>Custom pipe: Numeros to Array</h2>
-<!-- Primero no se muestra nada, porque el return devuelve null -->
-
-<ul>
-  <li *ngFor="let num of 10| numToArrCustomPipe">
-    {{num}}
-  </li>
-</ul>
-
-
