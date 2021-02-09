@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "Pipes"
+		},
+		{
+			"path": "Animations"
 		}
 	]
 }

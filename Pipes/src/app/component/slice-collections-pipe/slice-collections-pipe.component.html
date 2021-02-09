@@ -1,0 +1,15 @@
+<h2>slice-collections-pipe works!</h2>
+
+<ul>
+  <li *ngFor="let animal of this.animales | slice:this.min:this.max">
+    <!-- <p>{{animal | slice:1:3}}</p> -->
+    <p>{{animal }}</p>
+  </li>
+</ul>
+<div>
+  <!-- con ngModel, hace falta mportar FormsModule -->
+  Ejemplo de uso en mostrar un rango de precio, entre maximo y minimo como pc componentes
+  <input type="range" min="0" [max]="this.animales.length" step="1" [(ngModel)]="min"> {{this.min}}
+  <input type="range" min="0" [max]="this.animales.length" step="1" [(ngModel)]="max"> {{this.max}}
+
+</div>
