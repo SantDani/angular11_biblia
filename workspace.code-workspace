@@ -23,6 +23,9 @@
 		},
 		{
 			"path": "HTTP"
+		},
+		{
+			"path": "Pipes"
 		}
 	]
 }
