@@ -22,7 +22,10 @@
 			"path": "Formularios"
 		},
 		{
-			"path": "formulario-registro"
+			"path": "HTTP"
+		},
+		{
+			"path": "Pipes"
 		}
 	]
 }

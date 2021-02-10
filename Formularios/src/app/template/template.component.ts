@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
+  /**
+   * Toda la casi toda la funcionalidad se define en el HTML
+   */
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(formValues){
+
+    console.log(formValues);
   }
 
 }
