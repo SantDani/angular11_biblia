@@ -1,1 +1,23 @@
-<p>mapa-libreria works!</p>
+<h2>mapa-libreria works!</h2>
+<agm-map
+  [latitude]="this.latitud"
+  [longitude]="this.longitud"
+  [zoom]="this.zoom"
+  [fitBounds]="true">
+  <agm-marker
+    [latitude]="this.latitud"
+    [longitude]="this.longitud"
+    [markerDraggable]="true"> </agm-marker>
+
+  <agm-marker *ngFor="let pais of this.paises"
+    [latitude]="pais.latlng[0]"
+    [longitude]="pais.latlng[1]"
+    [iconUrl]="{url: pais.flag, scaledSize: {width: 20, height: 15}}"
+    [agmFitBounds]>
+  <agm-info-window>
+    {{pais.translations.es}}
+    <button> PULSA WEY</button>
+  </agm-info-window>
+</agm-marker>
+
+</agm-map>
