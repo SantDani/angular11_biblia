@@ -29,6 +29,9 @@
 		},
 		{
 			"path": "google-maps"
+		},
+		{
+			"path": "TodoUdemy"
 		}
 	]
 }
