@@ -53,7 +53,7 @@ describe('TodoService', () => {
 
   it('debería borrar una tarea', () => {
 
-    const todoBorrar = [...TODOS_TEST];
+    const todoBorrar = [...TODOS_TEST]; // copia de TODOS_TEST
     todoService.todos = todoBorrar;
 
     todoService.delete(2);
@@ -65,7 +65,7 @@ describe('TodoService', () => {
 
   it('ha de recuperar todas las tareas', () => {
     todoService.getAll().subscribe( listaTodos => {
-      // console.log(listaTodos); // se muestra en la consola
+      console.log(listaTodos); // se muestra en la consola tras ejecutar $ng test
 
       expect(listaTodos).toBeTruthy('No existen las tareas');
       expect(listaTodos.length).toBe(3, 'La longituda ha de ser de 3 tareas');
@@ -78,10 +78,32 @@ describe('TodoService', () => {
     const req =  httpTestingController.expectOne('http://localhost:3000/api/todos/all');
 
     expect(req.request.method).toBe('GET');
-    req.flush([
-      // { id: 1, autor: 'Mario', titulo: 'Tituo desde http', descripcion: 'Des. recuperada desde server '}
-      TODOS_TEST
-    ]);
+    /* req.flush([
+       { id: 1, autor: 'Mario', titulo: 'Tituo desde http', descripcion: 'Des. recuperada desde server '}
+      //TODOS_TEST
+    ]); */
+
+    req.flush(TODOS_TEST); // respuesta simulada
   });
 
+  it('ha de recuperar una unica tarea', () => {
+
+    todoService.getById(2).subscribe(tarea => {
+
+      expect(tarea).toBeTruthy('La tarea ha de existir');
+
+      expect(tarea.id).toBe(2, 'El ID de la tarea ha de ser 2');
+    });
+
+    const req = httpTestingController.expectOne('http://localhost:3000/api/todos/2');
+    expect(req.request.method).toBe('GET');
+
+    req.flush(TODOS_TEST[1]);
+
+  });
+
+  afterEach(() => {
+    // se verifica que no hay peticiones pendientes, en este caso peticiones GET
+    httpTestingController.verify(); // khe pitos hace
+  });
 });

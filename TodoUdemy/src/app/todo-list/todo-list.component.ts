@@ -8,6 +8,7 @@ import { Todo } from '../todo.service';
 })
 export class TodoListComponent implements OnInit {
 
+  /*Componente que solo representa datos */
   @Input() todos: Todo[];
 
   constructor() { }
