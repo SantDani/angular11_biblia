@@ -29,8 +29,16 @@
     //padding: 0.3rem;
   }
 
-  mat-card img {
-    width: 10vw;
+  mat-card {
+    img {
+      width: 10vw;
+    }
+
+    mat-card-title{
+      margin: 0.3rem;
+    }
   }
+
+
 }
 

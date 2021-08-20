@@ -22,7 +22,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
 
-     this.http.get<any>(URL_COUNTRIES_EU)
+     this.http.get<any[]>(URL_COUNTRIES_EU)
       .subscribe((countries: any) => {
 
         this.countries = countries;
