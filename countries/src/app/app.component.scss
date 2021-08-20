@@ -1,0 +1,36 @@
+.container-main{
+  height: 100%;
+  width: 100%;
+  //background-color: lightgoldenrodyellow;
+}
+
+.container-cards{
+  //height: max-content;
+  //width: max-content;
+  //background-color: lightcyan;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+
+  margin: 0.3rem;
+
+
+
+  .country-card{
+    //background-color: #E1E1E1;
+    width: 10vw;
+    margin-bottom: 1rem;
+    text-align: center;
+
+    //padding: 0.3rem;
+  }
+
+  mat-card img {
+    width: 10vw;
+  }
+}
+

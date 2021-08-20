@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
   title = 'countries';
 
 
-  public countries: any;
+  public countries: any[];
 
   constructor(private http: HttpClient) {
     this.countries = [];
@@ -22,7 +22,13 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
 
-    this.countries = this.http.get<any>(URL_COUNTRIES_EU);
+     this.http.get<any>(URL_COUNTRIES_EU)
+      .subscribe((countries: any) => {
+
+        this.countries = countries;
+
+        console.log(this.countries);
+      });
   }
 
 }

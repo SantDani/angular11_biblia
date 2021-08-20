@@ -1,1 +1,15 @@
 <h1>List countires</h1>
+<!--{{this.countries | json }}-->
+
+<body class="container-main">
+  <div class="container-cards">
+    <mat-card class="country-card" *ngFor="let country of this.countries">
+      <img [src]="country.flag" alt="">
+      <mat-card-title>{{country.name}}</mat-card-title>
+<!--      <mat-card-subtitle>{{country.capital}}</mat-card-subtitle>-->
+
+    </mat-card>
+
+
+  </div>
+</body>
