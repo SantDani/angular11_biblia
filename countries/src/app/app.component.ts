@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
+
+const URL_COUNTRIES_EU = 'https://restcountries.eu/rest/v2/regionalbloc/eu';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,7 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./app.component.scss']
 })
 
-const URL_COUNTRIES_EU = 'https://restcountries.eu/rest/v2/regionalbloc/eu';
+
 export class AppComponent implements OnInit{
   title = 'countries';
 
