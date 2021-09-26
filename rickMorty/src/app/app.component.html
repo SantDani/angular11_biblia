@@ -2,13 +2,28 @@
   <h1>Rick and Morty</h1>
   <div class="container-buttons">
     <button mat-button color="primary" (click)="this.prevPage()">Prev</button>
+    <div>
+      <input type="number"
+             [value]="this.actualPage"
+             maxlength="3"
+             #actualPageValue
+             (keyup.enter)="this.changePageActual(actualPageValue)">
+      /
+      {{this.totalPages}}
+    </div>
     <button mat-button color="primary" (click)="this.nextPage()">Next</button>
-
   </div>
   <div class="container-charters">
-    <mat-card class="charter"  *ngFor="let charter of this.charters">
-      <mat-card-title>{{charter.name}}</mat-card-title>
-      <img src="{{charter.image}}" alt="{{charter.name}}">
-    </mat-card>
+
+      <mat-card class="charter"  *ngFor="let charter of this.charters">
+        <mat-card-title>{{charter.name}}</mat-card-title>
+        <img src="{{charter.image}}" alt="{{charter.name}}">
+      </mat-card>
+
+  </div>
+
+  <div class="container-buttons">
+    <button mat-button color="primary" (click)="this.prevPage()">Prev</button>
+    <button mat-button color="primary" (click)="this.nextPage()">Next</button>
   </div>
 </body>
